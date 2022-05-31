@@ -1,0 +1,6 @@
+framework module Pods_EYEPAX {
+  umbrella header "Pods-EYEPAX-umbrella.h"
+
+  export *
+  module * { export * }
+}
