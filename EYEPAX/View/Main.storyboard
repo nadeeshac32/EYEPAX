@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SigninVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SigninVC" id="Y6W-OH-hqX" customClass="SigninVC" customModule="EYEPAX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YQP-e2-njA">
+                                <rect key="frame" x="87" y="233" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YQP-e2-njA" secondAttribute="height" multiplier="1:1" id="IWf-SV-Edr"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yA3-VA-div">
+                                <rect key="frame" x="57" y="493" width="300" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8f-JU-rGh" customClass="NCFBLoginButton" customModule="EYEPAX" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="45"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="z8f-JU-rGh" secondAttribute="bottom" id="2Pc-Rc-87m"/>
+                                    <constraint firstAttribute="trailing" secondItem="z8f-JU-rGh" secondAttribute="trailing" id="6MV-hX-lSd"/>
+                                    <constraint firstItem="z8f-JU-rGh" firstAttribute="leading" secondItem="yA3-VA-div" secondAttribute="leading" id="89M-kK-S7Y"/>
+                                    <constraint firstAttribute="height" constant="45" id="bwL-63-M9p"/>
+                                    <constraint firstItem="z8f-JU-rGh" firstAttribute="top" secondItem="yA3-VA-div" secondAttribute="top" id="czZ-bD-CgG"/>
+                                    <constraint firstAttribute="width" constant="300" id="ewe-fa-Nz5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YQP-e2-njA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="87" id="Jhw-wD-RRn"/>
+                            <constraint firstItem="yA3-VA-div" firstAttribute="centerX" secondItem="YQP-e2-njA" secondAttribute="centerX" id="Lqw-oV-MQb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YQP-e2-njA" secondAttribute="trailing" constant="87" id="Rmr-PV-FsO"/>
+                            <constraint firstItem="YQP-e2-njA" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" constant="-100" id="cBc-H9-2C3"/>
+                            <constraint firstItem="yA3-VA-div" firstAttribute="top" secondItem="YQP-e2-njA" secondAttribute="bottom" constant="20" id="pOb-kU-Xf5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="facebookSigninBtn" destination="z8f-JU-rGh" id="1RC-P3-IgQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60.869565217391312" y="71.651785714285708"/>
+        </scene>
+        <!--DashboardVC-->
+        <scene sceneID="eaO-us-8Nr">
+            <objects>
+                <viewController storyboardIdentifier="DashboardVC" id="EAu-1i-BhW" customClass="DashboardVC" customModule="EYEPAX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PLD-FX-zeF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DashboardVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMG-ET-JkX">
+                                <rect key="frame" x="154" y="442.5" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RXU-bg-8My"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rMG-ET-JkX" firstAttribute="centerX" secondItem="RXU-bg-8My" secondAttribute="centerX" id="0sC-8f-dWp"/>
+                            <constraint firstItem="rMG-ET-JkX" firstAttribute="centerY" secondItem="RXU-bg-8My" secondAttribute="centerY" id="Z19-7A-guX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c3T-Nc-RxN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730.43478260869574" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
