@@ -52,8 +52,8 @@ class BaseVC<ViewModel: BaseVM>: BaseSuperVC {
         self.navigationController?.navigationBar.isTranslucent                  = true
         self.navigationController?.navigationBar.tintColor                      = .white
         self.navigationController?.navigationBar.titleTextAttributes            = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.backgroundColor                = AppConfig.si.colorGradient2
-        self.navigationController?.setStatusBar(backgroundColor: AppConfig.si.colorGradient2)
+        self.navigationController?.navigationBar.backgroundColor                = AppConfig.si.colorwhite
+        self.navigationController?.setStatusBar(backgroundColor: AppConfig.si.colorwhite)
         viewModel?.viewWillAppear(animated: animated)
     }
     

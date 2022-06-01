@@ -62,6 +62,9 @@
 		C980720E28470BFD00C90033 /* Dashboard_VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980720D28470BFD00C90033 /* Dashboard_VM.swift */; };
 		C980721028470C0800C90033 /* Dashboard_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980720F28470C0800C90033 /* Dashboard_VC.swift */; };
 		C9807212284719EC00C90033 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9807211284719EC00C90033 /* Main.storyboard */; };
+		C980721C2847466F00C90033 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980721B2847466F00C90033 /* Article.swift */; };
+		C980721E2847468100C90033 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980721D2847468100C90033 /* Source.swift */; };
+		C9807220284749AF00C90033 /* NewsAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980721F284749AF00C90033 /* NewsAPIProtocol.swift */; };
 		D3CE5DD9FC9ABEB258F9073F /* Pods_EYEPAX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3190E5E1105323EDB67EED /* Pods_EYEPAX.framework */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +151,9 @@
 		C980720D28470BFD00C90033 /* Dashboard_VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard_VM.swift; sourceTree = "<group>"; };
 		C980720F28470C0800C90033 /* Dashboard_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard_VC.swift; sourceTree = "<group>"; };
 		C9807211284719EC00C90033 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C980721B2847466F00C90033 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		C980721D2847468100C90033 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		C980721F284749AF00C90033 /* NewsAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIProtocol.swift; sourceTree = "<group>"; };
 		FC191503EF56F323DB948601 /* Pods_EYEPAX_EYEPAXUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EYEPAX_EYEPAXUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -305,6 +311,8 @@
 		C980719728464D8B00C90033 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C980721B2847466F00C90033 /* Article.swift */,
+				C980721D2847468100C90033 /* Source.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,6 +355,7 @@
 		C980719D28464E3100C90033 /* APIProtocols */ = {
 			isa = PBXGroup;
 			children = (
+				C980721F284749AF00C90033 /* NewsAPIProtocol.swift */,
 			);
 			path = APIProtocols;
 			sourceTree = "<group>";
@@ -418,15 +427,15 @@
 		C98071B228464FF100C90033 /* BaseViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C98071B328464FF100C90033 /* BaseCollectionVC.swift */,
-				C98071B428464FF100C90033 /* BaseTableViewVM.swift */,
-				C98071B528464FF100C90033 /* BaseVC.swift */,
-				C98071B628464FF100C90033 /* BaseFormVC.swift */,
 				C98071B728464FF100C90033 /* BaseSuperVC.swift */,
-				C98071B828464FF100C90033 /* BaseFormVM.swift */,
-				C98071B928464FF100C90033 /* BaseTableViewVC.swift */,
+				C98071B528464FF100C90033 /* BaseVC.swift */,
 				C98071BA28464FF100C90033 /* BaseVM.swift */,
+				C98071B928464FF100C90033 /* BaseTableViewVC.swift */,
+				C98071B428464FF100C90033 /* BaseTableViewVM.swift */,
+				C98071B328464FF100C90033 /* BaseCollectionVC.swift */,
 				C98071BB28464FF100C90033 /* BaseCollectionVM.swift */,
+				C98071B628464FF100C90033 /* BaseFormVC.swift */,
+				C98071B828464FF100C90033 /* BaseFormVM.swift */,
 			);
 			path = BaseViewControllers;
 			sourceTree = "<group>";
@@ -724,6 +733,7 @@
 				C98071D728464FF100C90033 /* BaseVC.swift in Sources */,
 				C98071DB28464FF100C90033 /* BaseTableViewVC.swift in Sources */,
 				C98071D628464FF100C90033 /* BaseTableViewVM.swift in Sources */,
+				C980721E2847468100C90033 /* Source.swift in Sources */,
 				C98071ED2846F58200C90033 /* Signin_MV.swift in Sources */,
 				C98072052846F73700C90033 /* GeneralEmptyDataResponse.swift in Sources */,
 				C98071D028464FF100C90033 /* FacebookSignIn.swift in Sources */,
@@ -741,6 +751,7 @@
 				C98071D528464FF100C90033 /* BaseCollectionVC.swift in Sources */,
 				C98071F32846F65B00C90033 /* AppDelegate.swift in Sources */,
 				C98071DD28464FF100C90033 /* BaseCollectionVM.swift in Sources */,
+				C980721C2847466F00C90033 /* Article.swift in Sources */,
 				C98071CC28464FF100C90033 /* Extensions.swift in Sources */,
 				C98072012846F73700C90033 /* GeneralArrayResponse.swift in Sources */,
 				C98071E528464FF100C90033 /* StringKeys.swift in Sources */,
@@ -759,6 +770,7 @@
 				C98072022846F73700C90033 /* GeneralAuthResponse.swift in Sources */,
 				C98071D428464FF100C90033 /* BaseCoordinator.swift in Sources */,
 				C98071F72846F65B00C90033 /* SceneDelegate.swift in Sources */,
+				C9807220284749AF00C90033 /* NewsAPIProtocol.swift in Sources */,
 				C98071C928464FF100C90033 /* ReactiveExtensiones.swift in Sources */,
 				C98071CA28464FF100C90033 /* UIColor+Utils.swift in Sources */,
 				C980721028470C0800C90033 /* Dashboard_VC.swift in Sources */,

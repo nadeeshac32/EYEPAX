@@ -61,7 +61,7 @@ class AppConfig: NSObject, CLLocationManagerDelegate {
         return (keysArray as! NSDictionary)
     }
     
-    var loginToken: String! {
+    var newsAPIKey: String! {
         guard let string        = apiKeys["newsAPIKey"] else { return "" }
         return (string as! String)
     }
@@ -71,6 +71,7 @@ class AppConfig: NSObject, CLLocationManagerDelegate {
     
     //MARK: - Colors
     //TODO: - Color palet should be properly implemented
+    let colorwhite              = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     let colorPrimary            = #colorLiteral(red: 1, green: 0.2274509804, blue: 0.2666666667, alpha: 1)
     let colorPrimaryDisabled    = #colorLiteral(red: 1, green: 0.2274509804, blue: 0.2666666667, alpha: 0.5)
     let colorSecondary          = #colorLiteral(red: 0, green: 0.5019607843, blue: 1, alpha: 1)

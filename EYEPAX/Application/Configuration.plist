@@ -11,7 +11,7 @@
 			<key>domains</key>
 			<dict>
 				<key>base_url</key>
-				<string>https://newsapi.org</string>
+				<string>https://newsapi.org/v2</string>
 				<key>other_url</key>
 				<string>https://google</string>
 			</dict>
@@ -21,7 +21,7 @@
 			<key>domains</key>
 			<dict>
 				<key>base_url</key>
-				<string>https://newsapi.org</string>
+				<string>https://newsapi.org/v2</string>
 				<key>other_url</key>
 				<string>https://google</string>
 			</dict>
@@ -30,7 +30,7 @@
 	<key>apiKeys</key>
 	<dict>
 		<key>newsAPIKey</key>
-		<string>newsAPIKey</string>
+		<string>43add9152f834be1aaf4bf2a777df39d</string>
 	</dict>
 </dict>
 </plist>

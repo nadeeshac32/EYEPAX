@@ -15,7 +15,13 @@ class HTTPService: NSObject {
     var parameters                                  : Parameters? = [:]
     var headers                                     : HTTPHeaders? = [:]
 
-    init(baseUrl: String! = AppConfig.si.baseUrl) { self.baseUrl = baseUrl }
+    init(baseUrl: String! = AppConfig.si.baseUrl) {
+        self.baseUrl = baseUrl
+        headers                                     = [
+            "Content-Type"                          : "application/json",
+            "Authorization"                         : AppConfig.si.newsAPIKey
+        ]
+    }
     
     /// Generic method that actually do the network call
     /// - Parameters:
@@ -29,7 +35,7 @@ class HTTPService: NSObject {
     ///   - completionHandler: Completion Handler for Single return object
     ///   - completionHandlerForArray: Completion Handler for Array of return objects
     ///   - completionHandlerForNull: Completion Handler for no return objects
-    private func genericRequest<T: BaseModel>(method: HTTPMethod,
+    func genericRequest<T: BaseModel>(method: HTTPMethod,
                                                  parameters: Parameters?,
                                                  contextPath: String,
                                                  responseType: T.Type,
@@ -37,7 +43,7 @@ class HTTPService: NSObject {
                                                  encoding: ParameterEncoding? = JSONEncoding.default,
                                                  onError: ErrorCallback? = nil,
                                                  completionHandler: ((T) -> Void)? = nil,
-                                                 completionHandlerForArray: (([T]) -> Void)? = nil,
+                                                 completionHandlerForArray: (([T], Int) -> Void)? = nil,
                                                  completionHandlerForNull: (() -> Void)? = nil
                                                 ) {
 
@@ -87,7 +93,7 @@ class HTTPService: NSObject {
                         } else if let serverResponse  = response.value as? Dictionary<String, AnyObject>,
                             let responseObject      = Mapper<GeneralArrayResponse<T>>().map(JSON: serverResponse),
                             let responseItemsArrayResponse  = responseObject.data {
-                            completionHandlerForArray?(responseItemsArrayResponse)
+                            completionHandlerForArray?(responseItemsArrayResponse, responseObject.totalResults ?? 0)
                             return
                         
                         // Convert to Object
@@ -138,19 +144,5 @@ class HTTPService: NSObject {
             }
         }
         
-    }
-}
-
-extension HTTPService {
-    // This method won't be used
-    func resizeImage(image: UIImage, size: CGSize, scalar: CGFloat) -> UIImage? {
-        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        UIGraphicsBeginImageContextWithOptions(size, false, scalar)
-        image.draw(in: rect)
-
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return newImage
     }
 }

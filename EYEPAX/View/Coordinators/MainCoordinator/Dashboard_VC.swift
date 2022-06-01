@@ -7,7 +7,27 @@
 //
 
 import Foundation
+import UIKit
 
 class DashboardVC: BaseVC<DashboardVM> {
+    @IBOutlet weak var logoutBtn                : UIButton!
     
+    override func customiseView() {
+        logoutBtn.layer.cornerRadius            = 3
+    }
+    
+    override func setupBindings() {
+        super.setupBindings()
+        if let viewModel = self.viewModel {
+
+            disposeBag.insert([
+                // MARK: - Inputs
+                
+                // MARK: - Outputs
+                logoutBtn.rx.tap.bind {
+                    viewModel.logoutUser()
+                }
+            ])
+        }
+    }
 }
