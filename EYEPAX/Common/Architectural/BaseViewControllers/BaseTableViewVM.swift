@@ -47,6 +47,7 @@ extension BaseListVMDataSource where Self: BaseVM {
 public enum DataLoadIn {
     case ViewDidLoad
     case ViewWillAppear
+    case StopAutoLoading
 }
 
 /// Base ViewModel that supports BaseListVC & BaseList.

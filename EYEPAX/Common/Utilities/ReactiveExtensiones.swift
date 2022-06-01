@@ -54,6 +54,7 @@ extension Reactive where Base: AnimateTextField {
     }
 }
 
+extension UITableView: loadingViewable {}
 extension Reactive where Base: UITableView {
     func isLoading(loadingMessage: String, noItemsMessage: String, imageName: String?) -> Binder<Bool> {
         return Binder(base) { tableView, isLoading in
@@ -72,25 +73,49 @@ extension Reactive where Base: UITableView {
             }
         }
     }
+    
+    var isAnimating: Binder<Bool> {
+        return Binder(self.base, binding: { (tv, active) in
+            if active {
+                tv.startAnimating()
+            } else {
+                tv.stopAnimating()
+            }
+        })
+    }
 }
 
-
+extension UICollectionView: loadingViewable {}
 extension Reactive where Base: UICollectionView {
-    func isLoading(loadingMessage: String, noItemsMessage: String, imageName: String?) -> Binder<Bool> {
+    func isLoading(loadingMessage: String, noItemsMessage: String, imageName: String?, scrollingEnableWhileItemsLoading: Bool = false) -> Binder<Bool> {
         return Binder(base) { collectionView, isLoading in
             if isLoading {
-                collectionView.setNoDataPlaceholder(loadingMessage, nil)
+                if collectionView.numberOfSections > 0 {
+                    collectionView.removeNoDataPlaceholder()
+                } else {
+                    collectionView.setNoDataPlaceholder(loadingMessage, nil, scrollingEnableWhileItemsLoading)
+                }
             } else {
                 if collectionView.numberOfSections > 0 {
                     if collectionView.numberOfItems(inSection: 0) <= 0 {
-                        collectionView.setNoDataPlaceholder(noItemsMessage, imageName)
+                        collectionView.setNoDataPlaceholder(noItemsMessage, imageName, scrollingEnableWhileItemsLoading)
                     } else {
                         collectionView.removeNoDataPlaceholder()
                     }
                 } else {
-                    collectionView.setNoDataPlaceholder(noItemsMessage, imageName)
+                    collectionView.setNoDataPlaceholder(noItemsMessage, imageName, scrollingEnableWhileItemsLoading)
                 }
             }
         }
+    }
+    
+    var isAnimating: Binder<Bool> {
+        return Binder(self.base, binding: { (cv, active) in
+            if active {
+                cv.startAnimating()
+            } else {
+                cv.stopAnimating()
+            }
+        })
     }
 }

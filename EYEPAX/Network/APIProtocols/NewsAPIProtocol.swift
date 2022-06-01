@@ -11,24 +11,15 @@ import Alamofire
 protocol NewsAPIProtocol {
     func getTopHeadlines(method: HTTPMethod!,
                          country: String!,
-                         category: String!,
-                         sources: String!,
-                         q: String!,
+                         category: String?,
+                         q: String?,
                          pageSize: Int!,
                          page: Int!,
                          onSuccess: ((_ articles: [Article], _ totalItemsCount: Int) -> Void)?,
                          onError: ErrorCallback?)
     
     func getEveryNews(method: HTTPMethod!,
-                      q: String!,
-                      qInTitle: String!,
-                      sources: String!,
-                      domains: String!,
-                      excludeDomains: String!,
-                      from: String!,
-                      to: String!,
-                      language: String!,
-                      sortBy: String!,
+                      q: String?,
                       pageSize: Int!,
                       page: Int!,
                       onSuccess: ((_ articles: [Article], _ totalItemsCount: Int) -> Void)?,
@@ -37,10 +28,9 @@ protocol NewsAPIProtocol {
 
 extension HTTPService: NewsAPIProtocol {
     func getTopHeadlines(method: HTTPMethod! = .get,
-                         country: String! = "",
-                         category: String! = "",
-                         sources: String! = "",
-                         q: String! = "",
+                         country: String! = "us",
+                         category: String? = nil,
+                         q: String? = nil,
                          pageSize: Int! = 20,
                          page: Int! = 0,
                          onSuccess: (([Article], Int) -> Void)?,
@@ -48,9 +38,8 @@ extension HTTPService: NewsAPIProtocol {
         
         var contextPath = "top-headlines"
         contextPath += "?country=\(country!)"
-        contextPath += "&category=\(category!)"
-        contextPath += "&sources=\(sources!)"
-        contextPath += "&q=\(q!)"
+        if category != nil { contextPath += "&category=\(category!)" }
+        if q != nil { contextPath += "&q=\(q!)" }
         contextPath += "&pageSize=\(pageSize!)"
         contextPath += "&page=\(page!)"
         genericRequest(method: method!, parameters: nil, contextPath: contextPath, responseType: Article.self, onError: onError, completionHandlerForArray: { (arrayResponse, itemsCount) in
@@ -60,30 +49,13 @@ extension HTTPService: NewsAPIProtocol {
     }
     
     func getEveryNews(method: HTTPMethod! = .get,
-                      q: String! = "",
-                      qInTitle: String! = "",
-                      sources: String! = "",
-                      domains: String! = "",
-                      excludeDomains: String! = "",
-                      from: String! = "",
-                      to: String! = "",
-                      language: String! = "",
-                      sortBy: String! = "",
+                      q: String? = nil,
                       pageSize: Int! = 20,
                       page: Int! = 1,
                       onSuccess: (([Article], Int) -> Void)?,
                       onError: ErrorCallback?) {
-        
         var contextPath = "everything"
-        contextPath += "?q=\(q!)"
-        contextPath += "&qInTitle=\(qInTitle!)"
-        contextPath += "&sources=\(sources!)"
-        contextPath += "&domains=\(domains!)"
-        contextPath += "&excludeDomains=\(excludeDomains!)"
-        contextPath += "&from=\(from!)"
-        contextPath += "&to=\(to!)"
-        contextPath += "&language=\(language!)"
-        contextPath += "&sortBy=\(sortBy!)"
+        if q != nil {contextPath += "?q=\(q!)"}
         contextPath += "&pageSize=\(pageSize!)"
         contextPath += "&page=\(page!)"
         genericRequest(method: method!, parameters: nil, contextPath: contextPath, responseType: Article.self, onError: onError, completionHandlerForArray: { (arrayResponse, itemsCount) in

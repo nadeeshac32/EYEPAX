@@ -65,6 +65,12 @@
 		C980721C2847466F00C90033 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980721B2847466F00C90033 /* Article.swift */; };
 		C980721E2847468100C90033 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980721D2847468100C90033 /* Source.swift */; };
 		C9807220284749AF00C90033 /* NewsAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980721F284749AF00C90033 /* NewsAPIProtocol.swift */; };
+		C980722528476A0A00C90033 /* BaseGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980722128476A0A00C90033 /* BaseGrid.swift */; };
+		C980722728476A0A00C90033 /* BaseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980722328476A0A00C90033 /* BaseList.swift */; };
+		C980722D2847A43A00C90033 /* LatestNewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980722B2847A43A00C90033 /* LatestNewCVCell.swift */; };
+		C980722E2847A43A00C90033 /* LatestNewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C980722C2847A43A00C90033 /* LatestNewCVCell.xib */; };
+		C98072302847A92800C90033 /* Latest_News_CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980722F2847A92800C90033 /* Latest_News_CV.swift */; };
+		C98072322847AAD700C90033 /* Latest_News_CV_VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98072312847AAD700C90033 /* Latest_News_CV_VM.swift */; };
 		D3CE5DD9FC9ABEB258F9073F /* Pods_EYEPAX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3190E5E1105323EDB67EED /* Pods_EYEPAX.framework */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +160,12 @@
 		C980721B2847466F00C90033 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		C980721D2847468100C90033 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		C980721F284749AF00C90033 /* NewsAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIProtocol.swift; sourceTree = "<group>"; };
+		C980722128476A0A00C90033 /* BaseGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGrid.swift; sourceTree = "<group>"; };
+		C980722328476A0A00C90033 /* BaseList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseList.swift; sourceTree = "<group>"; };
+		C980722B2847A43A00C90033 /* LatestNewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNewCVCell.swift; sourceTree = "<group>"; };
+		C980722C2847A43A00C90033 /* LatestNewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestNewCVCell.xib; sourceTree = "<group>"; };
+		C980722F2847A92800C90033 /* Latest_News_CV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Latest_News_CV.swift; sourceTree = "<group>"; };
+		C98072312847AAD700C90033 /* Latest_News_CV_VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Latest_News_CV_VM.swift; sourceTree = "<group>"; };
 		FC191503EF56F323DB948601 /* Pods_EYEPAX_EYEPAXUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EYEPAX_EYEPAXUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -328,6 +340,8 @@
 		C980719A28464DC900C90033 /* TableVCollectionVCells */ = {
 			isa = PBXGroup;
 			children = (
+				C980722B2847A43A00C90033 /* LatestNewCVCell.swift */,
+				C980722C2847A43A00C90033 /* LatestNewCVCell.xib */,
 			);
 			path = TableVCollectionVCells;
 			sourceTree = "<group>";
@@ -336,10 +350,8 @@
 			isa = PBXGroup;
 			children = (
 				C98071E92846F58200C90033 /* Main_Coordinator.swift */,
-				C98071EA2846F58200C90033 /* Signin_MV.swift */,
-				C98071E82846F58100C90033 /* Signin_VC.swift */,
-				C980720D28470BFD00C90033 /* Dashboard_VM.swift */,
-				C980720F28470C0800C90033 /* Dashboard_VC.swift */,
+				C98072292847A38400C90033 /* SignIn */,
+				C980722A2847A3A100C90033 /* Dashboard */,
 			);
 			path = MainCoordinator;
 			sourceTree = "<group>";
@@ -451,11 +463,13 @@
 		C98071BE28464FF100C90033 /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
+				C980722128476A0A00C90033 /* BaseGrid.swift */,
+				C980722328476A0A00C90033 /* BaseList.swift */,
 				C98071BF28464FF100C90033 /* BaseCVCell.swift */,
+				C98071C328464FF100C90033 /* BaseTVCell.swift */,
 				C98071C028464FF100C90033 /* AnimateTextField.swift */,
 				C98071C128464FF100C90033 /* GenericView.swift */,
 				C98071C228464FF100C90033 /* BaseButton.swift */,
-				C98071C328464FF100C90033 /* BaseTVCell.swift */,
 			);
 			path = BaseViews;
 			sourceTree = "<group>";
@@ -482,6 +496,26 @@
 				C98071F92846F73700C90033 /* GeneralArrayResponse.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		C98072292847A38400C90033 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				C98071EA2846F58200C90033 /* Signin_MV.swift */,
+				C98071E82846F58100C90033 /* Signin_VC.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		C980722A2847A3A100C90033 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				C980720D28470BFD00C90033 /* Dashboard_VM.swift */,
+				C980720F28470C0800C90033 /* Dashboard_VC.swift */,
+				C980722F2847A92800C90033 /* Latest_News_CV.swift */,
+				C98072312847AAD700C90033 /* Latest_News_CV_VM.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -595,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C980716F284647B400C90033 /* LaunchScreen.storyboard in Resources */,
+				C980722E2847A43A00C90033 /* LatestNewCVCell.xib in Resources */,
 				C98071F52846F65B00C90033 /* Configuration.plist in Resources */,
 				C980716C284647B400C90033 /* Assets.xcassets in Resources */,
 				C9807212284719EC00C90033 /* Main.storyboard in Resources */,
@@ -737,6 +772,8 @@
 				C98071ED2846F58200C90033 /* Signin_MV.swift in Sources */,
 				C98072052846F73700C90033 /* GeneralEmptyDataResponse.swift in Sources */,
 				C98071D028464FF100C90033 /* FacebookSignIn.swift in Sources */,
+				C980722D2847A43A00C90033 /* LatestNewCVCell.swift in Sources */,
+				C98072322847AAD700C90033 /* Latest_News_CV_VM.swift in Sources */,
 				C980720E28470BFD00C90033 /* Dashboard_VM.swift in Sources */,
 				C98072032846F73700C90033 /* RestClientError.swift in Sources */,
 				C98071D228464FF100C90033 /* NCFBLoginButton.swift in Sources */,
@@ -764,7 +801,10 @@
 				C98071DC28464FF100C90033 /* BaseVM.swift in Sources */,
 				C98071E728464FF100C90033 /* LoadingViewable.swift in Sources */,
 				C98071D828464FF100C90033 /* BaseFormVC.swift in Sources */,
+				C980722728476A0A00C90033 /* BaseList.swift in Sources */,
+				C98072302847A92800C90033 /* Latest_News_CV.swift in Sources */,
 				C98071CF28464FF100C90033 /* UserAuth.swift in Sources */,
+				C980722528476A0A00C90033 /* BaseGrid.swift in Sources */,
 				C98071E428464FF100C90033 /* NCUIMaker.swift in Sources */,
 				C98071D928464FF100C90033 /* BaseSuperVC.swift in Sources */,
 				C98072022846F73700C90033 /* GeneralAuthResponse.swift in Sources */,
@@ -950,7 +990,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -979,7 +1019,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1138,7 +1178,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

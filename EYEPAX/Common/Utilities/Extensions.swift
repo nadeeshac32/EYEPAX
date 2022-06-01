@@ -450,7 +450,7 @@ extension UITableView {
 }
 
 extension UICollectionView {
-    func setNoDataPlaceholder(_ message: String,_ imageName: String?) {
+    func setNoDataPlaceholder(_ message: String,_ imageName: String?, _ scrollingEnableWhileItemsLoading: Bool) {
         if imageName == nil {
             let label               = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
             label.textAlignment     = .center
@@ -458,7 +458,7 @@ extension UICollectionView {
             label.text              = message
             label.numberOfLines     = 5
             label.sizeToFit()
-            self.isScrollEnabled    = false
+            self.isScrollEnabled    = scrollingEnableWhileItemsLoading
             self.backgroundView     = label
             
         } else {
@@ -484,7 +484,7 @@ extension UICollectionView {
                 make.left.equalToSuperview().offset(20)
                 make.right.equalToSuperview().offset(-20)
             }
-            self.isScrollEnabled    = false
+            self.isScrollEnabled    = scrollingEnableWhileItemsLoading
             self.backgroundView     = view
         }
     }
