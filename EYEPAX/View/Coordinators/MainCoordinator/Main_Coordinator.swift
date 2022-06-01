@@ -60,6 +60,9 @@ class MainCoordinator: BaseCoordinator<Void> {
             rootVM.showSearchNewsPage.subscribe(onNext: { [weak self] (_) in
                 self?.goToSearchNewsVC()
             }),
+            rootVM.doWithSelectedItem.subscribe(onNext: { [weak self] (article) in
+                self?.goToNewsDetailsVC(article: article)
+            }),
         ])
 
         let rootNavController                   = DashboardVC.initFromStoryboardEmbedInNVC(withViewModel: rootVM)
@@ -76,7 +79,7 @@ class MainCoordinator: BaseCoordinator<Void> {
             }),
         ])
 
-        let destinationVC               = NewsDetailVC.initFromStoryboard(name: Storyboards.main.rawValue, withViewModel: viewModel)
+        let destinationVC                       = NewsDetailVC.initFromStoryboard(name: Storyboards.main.rawValue, withViewModel: viewModel)
         self.navigationController.pushViewController(destinationVC, animated: true)
     }
     
@@ -91,7 +94,7 @@ class MainCoordinator: BaseCoordinator<Void> {
             }),
         ])
 
-        let destinationVC               = NewsSearchVC.initFromStoryboard(name: Storyboards.main.rawValue, withViewModel: viewModel)
+        let destinationVC                       = NewsSearchVC.initFromStoryboard(name: Storyboards.main.rawValue, withViewModel: viewModel)
         self.navigationController.pushViewController(destinationVC, animated: true)
     }
     

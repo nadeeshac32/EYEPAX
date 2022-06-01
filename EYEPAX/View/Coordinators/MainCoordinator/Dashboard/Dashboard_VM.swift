@@ -14,11 +14,12 @@ class DashboardVM: BaseTableViewVM<Article> {
     override var dataLoadIn         : DataLoadIn? { get { return .ViewWillAppear } set {} }
     override var shouldSortFromKey  : Bool { get { return false } set {} }
     
-    let setLatestNews                   = PublishSubject<[Article]>()
-    let showSearchNewsPage              = PublishSubject<Bool>()
-    let showNewsDetail                  = PublishSubject<Article>()
+    let setLatestNews               = PublishSubject<[Article]>()
+    let showSearchNewsPage          = PublishSubject<Bool>()
+    let showNewsDetail              = PublishSubject<Article>()
     
-    var category: String = "business" {
+    let categoriesList              = ["Business", "Healthy", "Technology", "Finance", "Sports", "Development"]
+    var category: String = "Business" {
         didSet {
             reloadList()
         }
@@ -42,7 +43,7 @@ class DashboardVM: BaseTableViewVM<Article> {
     }
     
     private func getLatestNewsRequest() {
-        let httpService           = HTTPService()
+        let httpService             = HTTPService()
         requestLoading.onNext(true)
         httpService.getTopHeadlines(onSuccess: { [weak self] (articles, totalItemsCount) in
             self?.requestLoading.onNext(false)

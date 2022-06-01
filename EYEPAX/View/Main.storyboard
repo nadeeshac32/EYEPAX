@@ -106,26 +106,36 @@
                                         <cells/>
                                     </collectionView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lgz-K4-hYU">
-                                        <rect key="frame" x="12" y="319" width="389" height="491"/>
+                                        <rect key="frame" x="12" y="355" width="389" height="491"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="491" id="fXd-OV-ieH"/>
                                         </constraints>
                                     </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggD-g9-hPW">
+                                        <rect key="frame" x="12" y="301" width="389" height="54"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="JPX-qC-uOU"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="oaL-gJ-1Cj" firstAttribute="trailing" secondItem="2iA-t0-m9k" secondAttribute="trailing" id="07b-52-83e"/>
                                     <constraint firstAttribute="bottom" secondItem="lgz-K4-hYU" secondAttribute="bottom" constant="8" id="2f6-Sb-hku"/>
-                                    <constraint firstItem="lgz-K4-hYU" firstAttribute="top" secondItem="oaL-gJ-1Cj" secondAttribute="bottom" constant="26" id="5nz-6u-B16"/>
                                     <constraint firstItem="6h1-hO-dvf" firstAttribute="top" secondItem="K6R-di-mI3" secondAttribute="top" constant="20" id="8y4-YE-xX0"/>
                                     <constraint firstItem="2iA-t0-m9k" firstAttribute="centerY" secondItem="6h1-hO-dvf" secondAttribute="centerY" id="ABf-md-jyy"/>
                                     <constraint firstItem="oaL-gJ-1Cj" firstAttribute="top" secondItem="6h1-hO-dvf" secondAttribute="bottom" constant="12" id="E65-RX-G2A"/>
-                                    <constraint firstItem="lgz-K4-hYU" firstAttribute="trailing" secondItem="oaL-gJ-1Cj" secondAttribute="trailing" id="RuL-pc-vfi"/>
                                     <constraint firstAttribute="trailing" secondItem="2iA-t0-m9k" secondAttribute="trailing" constant="12" id="SEe-Sx-Fj2"/>
+                                    <constraint firstItem="lgz-K4-hYU" firstAttribute="leading" secondItem="ggD-g9-hPW" secondAttribute="leading" id="T7Z-KR-pPl"/>
+                                    <constraint firstItem="lgz-K4-hYU" firstAttribute="top" secondItem="ggD-g9-hPW" secondAttribute="bottom" id="fs3-YS-R4j"/>
                                     <constraint firstItem="6h1-hO-dvf" firstAttribute="leading" secondItem="K6R-di-mI3" secondAttribute="leading" constant="12" id="gX4-vz-Q50"/>
                                     <constraint firstItem="oaL-gJ-1Cj" firstAttribute="leading" secondItem="6h1-hO-dvf" secondAttribute="leading" id="mvr-4Y-4Md"/>
-                                    <constraint firstItem="lgz-K4-hYU" firstAttribute="leading" secondItem="oaL-gJ-1Cj" secondAttribute="leading" id="n7j-EV-v02"/>
+                                    <constraint firstItem="lgz-K4-hYU" firstAttribute="trailing" secondItem="ggD-g9-hPW" secondAttribute="trailing" id="rBP-88-9aw"/>
+                                    <constraint firstItem="ggD-g9-hPW" firstAttribute="leading" secondItem="oaL-gJ-1Cj" secondAttribute="leading" id="tnd-R4-2ie"/>
+                                    <constraint firstItem="ggD-g9-hPW" firstAttribute="top" secondItem="oaL-gJ-1Cj" secondAttribute="bottom" constant="8" symbolic="YES" id="uZr-H7-DJE"/>
+                                    <constraint firstItem="ggD-g9-hPW" firstAttribute="trailing" secondItem="oaL-gJ-1Cj" secondAttribute="trailing" id="vaZ-SY-yWc"/>
                                     <constraint firstItem="2iA-t0-m9k" firstAttribute="leading" secondItem="6h1-hO-dvf" secondAttribute="trailing" priority="999" constant="139" id="zNd-ub-2vJ"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="YPn-du-1NE"/>
@@ -162,6 +172,7 @@
                     </view>
                     <connections>
                         <outlet property="_latestNewCV" destination="oaL-gJ-1Cj" id="bvX-Ht-kJY"/>
+                        <outlet property="_menuBarView" destination="ggD-g9-hPW" id="5oX-Vn-WGX"/>
                         <outlet property="_searchBar" destination="YQT-Su-fEq" id="MCS-bS-nIN"/>
                         <outlet property="_tableView" destination="lgz-K4-hYU" id="4Oh-J2-yuy"/>
                         <outlet property="logOutBtn" destination="EGD-Sz-Vnp" id="un1-wF-PKp"/>
