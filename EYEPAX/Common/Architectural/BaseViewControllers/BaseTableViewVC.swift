@@ -159,6 +159,10 @@ class BaseTableViewVC<Model:BaseModel, ViewModel: BaseTableViewVM<Model>, TableV
         viewModel?.searchText                   = searchBar.text ?? ""
         searchBar.resignFirstResponder()
     }
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        return true
+    }
 }
 
 extension BaseTableViewVC: BaseTVCellDelegate {

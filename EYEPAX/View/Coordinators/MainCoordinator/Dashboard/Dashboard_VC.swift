@@ -9,21 +9,25 @@
 import Foundation
 import UIKit
 
-class DashboardVC: BaseVC<DashboardVM> {
+class DashboardVC: BaseListWithoutHeadersVC<Article, DashboardVM, NewsTVCell> {
     
     @IBOutlet weak var logOutBtn    : UIButton!
-    @IBOutlet weak var searchBar    : UISearchBar!
+    @IBOutlet weak var _searchBar   : UISearchBar!
     @IBOutlet weak var seeAllBtn    : UIButton!
     @IBOutlet weak var _latestNewCV : UICollectionView!
+    @IBOutlet weak var _tableView   : UITableView!
+    
+    override var cellLoadFromNib    : Bool { get { return true } set {} }
+    override var shouldSetRowHeight : Bool { get { return false } set {} }
     
     var latestNewCVViewModel        : LatestNewsCVVM?
     var latestNewCV                 : LatestNewsCV<LatestNewCVCell>?
     
     override func customiseView() {
-        super.customiseView()
+        super.customiseView(tableView: _tableView, multiSelectable: false)
         logOutBtn.setTitle("", for: .normal)
         logOutBtn.setImage(UIImage(named: "back")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        searchBar.delegate          = self
+        _searchBar.delegate          = self
     }
     override func setupBindings() {
         super.setupBindings()
@@ -62,14 +66,12 @@ class DashboardVC: BaseVC<DashboardVM> {
         }).disposed(by: disposeBag)
         latestNewCVViewModel?.viewDidLoad()
     }
-        
-}
-
-extension DashboardVC: UISearchBarDelegate {
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+    
+    override func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         viewModel?.showSearchNewsPage.onNext(true)
         return false
     }
+        
 }
 
 extension DashboardVC: BaseGridDelagate {

@@ -36,9 +36,9 @@ class NewsSearchVM: BaseTableViewVM<Article> {
     override func performSearchItemsRequest(searchText: String, loadPage: Int, limit: Int) {
         let httpService             = HTTPService()
         showSpiner()
-        httpService.getEveryNews(q: searchText, pageSize: limit) { [weak self] (headlines, totalCount) in
+        httpService.getEveryNews(q: searchText, pageSize: limit) { [weak self] (news, totalCount) in
             self?.requestLoading.onNext(false)
-            self?.handleResponse(items: headlines, total: totalCount, page: loadPage)
+            self?.handleResponse(items: news, total: totalCount, page: loadPage)
             self?.updateResultDesc.onNext("About \(totalCount) results for \'\(searchText)\'")
         } onError: { [weak self] error in
             self?.handleRestClientError(error: error)
