@@ -148,6 +148,75 @@
             </objects>
             <point key="canvasLocation" x="730.43478260869574" y="71.651785714285708"/>
         </scene>
+        <!--News DetailVC-->
+        <scene sceneID="oSd-K8-El0">
+            <objects>
+                <viewController storyboardIdentifier="NewsDetailVC" id="OC7-cG-hwv" customClass="NewsDetailVC" customModule="EYEPAX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3sH-G8-K4X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N5C-xk-B5v">
+                                <rect key="frame" x="0.0" y="44" width="414" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="A5W-am-VK6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85J-JI-ISW">
+                                <rect key="frame" x="20" y="314" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mE0-AY-bbn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="N5C-xk-B5v" firstAttribute="top" secondItem="mE0-AY-bbn" secondAttribute="top" id="ClN-7e-XGZ"/>
+                            <constraint firstItem="85J-JI-ISW" firstAttribute="leading" secondItem="mE0-AY-bbn" secondAttribute="leading" constant="20" id="TjD-Gp-PTa"/>
+                            <constraint firstItem="85J-JI-ISW" firstAttribute="top" secondItem="N5C-xk-B5v" secondAttribute="bottom" constant="20" id="XNb-d0-i7P"/>
+                            <constraint firstItem="N5C-xk-B5v" firstAttribute="leading" secondItem="mE0-AY-bbn" secondAttribute="leading" id="Xln-Oe-zEq"/>
+                            <constraint firstItem="mE0-AY-bbn" firstAttribute="trailing" secondItem="85J-JI-ISW" secondAttribute="trailing" constant="20" id="ajm-e1-p8V"/>
+                            <constraint firstItem="N5C-xk-B5v" firstAttribute="trailing" secondItem="mE0-AY-bbn" secondAttribute="trailing" id="ceV-YE-bbG"/>
+                            <constraint firstItem="85J-JI-ISW" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="mE0-AY-bbn" secondAttribute="bottom" id="dht-4n-yIE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descLbl" destination="85J-JI-ISW" id="NDK-qk-7rE"/>
+                        <outlet property="imageVw" destination="N5C-xk-B5v" id="s2L-nh-GSp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mpy-au-Ocv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1418.840579710145" y="71.651785714285708"/>
+        </scene>
+        <!--News SearchVC-->
+        <scene sceneID="a6C-zj-avQ">
+            <objects>
+                <viewController storyboardIdentifier="NewsSearchVC" id="O8P-s6-CqG" customClass="NewsSearchVC" customModule="EYEPAX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JCc-kT-mWX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsSearchVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJW-Df-0cc">
+                                <rect key="frame" x="148" y="442.5" width="118" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZdX-nG-yY2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WJW-Df-0cc" firstAttribute="centerX" secondItem="ZdX-nG-yY2" secondAttribute="centerX" id="4Z3-j1-tX0"/>
+                            <constraint firstItem="WJW-Df-0cc" firstAttribute="centerY" secondItem="ZdX-nG-yY2" secondAttribute="centerY" id="E0V-Ze-S8g"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0rX-iH-B4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2093" y="72"/>
+        </scene>
     </scenes>
     <resources>
         <image name="image_logo" width="400" height="400"/>

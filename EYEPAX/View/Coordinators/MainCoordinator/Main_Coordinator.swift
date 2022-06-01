@@ -54,12 +54,42 @@ class MainCoordinator: BaseCoordinator<Void> {
             rootVM.showSignInVC.subscribe(onNext: { [weak self] (_) in
                 let _ = self?.start()
             }),
+            rootVM.showNewsDetail.subscribe(onNext: { [weak self] (article) in
+                self?.goToNewsDetailsVC(article: article)
+            }),
+            rootVM.showSearchNewsPage.subscribe(onNext: { [weak self] (_) in
+                self?.goToSearchNewsVC()
+            }),
         ])
 
         let rootNavController                   = DashboardVC.initFromStoryboardEmbedInNVC(withViewModel: rootVM)
         self.navigationController               = rootNavController
         window.rootViewController               = navigationController
         window.makeKeyAndVisible()
+    }
+    
+    private func goToNewsDetailsVC(article: Article) {
+        let viewModel                           = NewsDetailVM(article: article)
+        disposeBag.insert([
+            viewModel.showSignInVC.subscribe(onNext: { [weak self] (_) in
+                let _ = self?.start()
+            }),
+        ])
+
+        let destinationVC               = NewsDetailVC.initFromStoryboard(name: Storyboards.main.rawValue, withViewModel: viewModel)
+        self.navigationController.pushViewController(destinationVC, animated: true)
+    }
+    
+    private func goToSearchNewsVC() {
+        let viewModel                           = NewsSearchVM()
+        disposeBag.insert([
+            viewModel.showSignInVC.subscribe(onNext: { [weak self] (_) in
+                let _ = self?.start()
+            }),
+        ])
+
+        let destinationVC               = NewsSearchVC.initFromStoryboard(name: Storyboards.main.rawValue, withViewModel: viewModel)
+        self.navigationController.pushViewController(destinationVC, animated: true)
     }
     
 }

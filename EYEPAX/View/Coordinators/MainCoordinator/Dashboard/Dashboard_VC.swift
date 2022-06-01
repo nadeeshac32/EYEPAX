@@ -18,11 +18,6 @@ class DashboardVC: BaseVC<DashboardVM> {
     var latestNewCVViewModel    : LatestNewsCVVM?
     var latestNewCV             : LatestNewsCV<LatestNewCVCell>?
     
-    override func customiseView() {
-        super.customiseView()
-        
-    }
-    
     override func setupBindings() {
         super.setupBindings()
         if let viewModel = self.viewModel {
