@@ -78,7 +78,7 @@ class BaseTableViewVM<Model: BaseModel>: BaseVM {
 	var hasNextPage 		: Bool 					= true
     var totalCount          : Int                   = 1
     var requestPage         : Int                   = 0
-    let limit               : Int                   = 200
+    let limit               : Int                   = 50
     
     /// Data list can be sorted from key if you wanted. In the Data model you should override getSortKey method as you want.
     var shouldSortFromKey   : Bool                  = false

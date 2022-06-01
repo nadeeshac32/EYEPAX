@@ -13,6 +13,8 @@
 		C95C5E492847DAAE00B2F58D /* News_Detail_VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95C5E472847DAAE00B2F58D /* News_Detail_VM.swift */; };
 		C95C5E4C2847DB1500B2F58D /* News_Search_VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95C5E4B2847DB1500B2F58D /* News_Search_VM.swift */; };
 		C95C5E4E2847DB1F00B2F58D /* News_Search_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95C5E4D2847DB1F00B2F58D /* News_Search_VC.swift */; };
+		C95C5E512848024900B2F58D /* NewsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95C5E4F2848024900B2F58D /* NewsTVCell.swift */; };
+		C95C5E522848024900B2F58D /* NewsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95C5E502848024900B2F58D /* NewsTVCell.xib */; };
 		C980716C284647B400C90033 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C980716B284647B400C90033 /* Assets.xcassets */; };
 		C980716F284647B400C90033 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C980716D284647B400C90033 /* LaunchScreen.storyboard */; };
 		C980717A284647B400C90033 /* EYEPAXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9807179284647B400C90033 /* EYEPAXTests.swift */; };
@@ -108,6 +110,8 @@
 		C95C5E472847DAAE00B2F58D /* News_Detail_VM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News_Detail_VM.swift; sourceTree = "<group>"; };
 		C95C5E4B2847DB1500B2F58D /* News_Search_VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News_Search_VM.swift; sourceTree = "<group>"; };
 		C95C5E4D2847DB1F00B2F58D /* News_Search_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News_Search_VC.swift; sourceTree = "<group>"; };
+		C95C5E4F2848024900B2F58D /* NewsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVCell.swift; sourceTree = "<group>"; };
+		C95C5E502848024900B2F58D /* NewsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTVCell.xib; sourceTree = "<group>"; };
 		C980715F284647B300C90033 /* EYEPAX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EYEPAX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C980716B284647B400C90033 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C980716E284647B400C90033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -368,6 +372,8 @@
 			children = (
 				C980722B2847A43A00C90033 /* LatestNewCVCell.swift */,
 				C980722C2847A43A00C90033 /* LatestNewCVCell.xib */,
+				C95C5E4F2848024900B2F58D /* NewsTVCell.swift */,
+				C95C5E502848024900B2F58D /* NewsTVCell.xib */,
 			);
 			path = TableVCollectionVCells;
 			sourceTree = "<group>";
@@ -656,6 +662,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C95C5E522848024900B2F58D /* NewsTVCell.xib in Resources */,
 				C980716F284647B400C90033 /* LaunchScreen.storyboard in Resources */,
 				C980722E2847A43A00C90033 /* LatestNewCVCell.xib in Resources */,
 				C98071F52846F65B00C90033 /* Configuration.plist in Resources */,
@@ -830,6 +837,7 @@
 				C98071F62846F65B00C90033 /* AppConfig.swift in Sources */,
 				C98071E628464FF100C90033 /* NCCustomMessageMaker.swift in Sources */,
 				C98071D328464FF100C90033 /* SocialSignInVM.swift in Sources */,
+				C95C5E512848024900B2F58D /* NewsTVCell.swift in Sources */,
 				C98071DC28464FF100C90033 /* BaseVM.swift in Sources */,
 				C98071E728464FF100C90033 /* LoadingViewable.swift in Sources */,
 				C98071D828464FF100C90033 /* BaseFormVC.swift in Sources */,

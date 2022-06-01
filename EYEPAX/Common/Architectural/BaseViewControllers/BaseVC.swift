@@ -50,8 +50,8 @@ class BaseVC<ViewModel: BaseVM>: BaseSuperVC {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden                        = false
         self.navigationController?.navigationBar.isTranslucent                  = true
-        self.navigationController?.navigationBar.tintColor                      = .white
-        self.navigationController?.navigationBar.titleTextAttributes            = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor                      = .black
+        self.navigationController?.navigationBar.titleTextAttributes            = [NSAttributedString.Key.foregroundColor: UIColor.black]
         self.navigationController?.navigationBar.backgroundColor                = AppConfig.si.colorwhite
         self.navigationController?.setStatusBar(backgroundColor: AppConfig.si.colorwhite)
         viewModel?.viewWillAppear(animated: animated)
@@ -81,7 +81,7 @@ class BaseVC<ViewModel: BaseVM>: BaseSuperVC {
         self.view.backgroundColor                                               = .white
     }
     
-    func addBackButton(title: String? = "Back", icon: String? = "icon_back") {
+    func addBackButton(title: String? = "Back", icon: String? = "back") {
         let button                                                              = UIButton(type: .system)
         if let icon = icon {
             button.setImage(UIImage(named: icon)?.withRenderingMode(.alwaysTemplate), for: .normal)

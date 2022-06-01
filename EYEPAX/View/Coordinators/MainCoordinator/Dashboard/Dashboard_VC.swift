@@ -11,13 +11,20 @@ import UIKit
 
 class DashboardVC: BaseVC<DashboardVM> {
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var seeAllBtn: UIButton!
-    @IBOutlet weak var _latestNewCV: UICollectionView!
+    @IBOutlet weak var logOutBtn    : UIButton!
+    @IBOutlet weak var searchBar    : UISearchBar!
+    @IBOutlet weak var seeAllBtn    : UIButton!
+    @IBOutlet weak var _latestNewCV : UICollectionView!
     
-    var latestNewCVViewModel    : LatestNewsCVVM?
-    var latestNewCV             : LatestNewsCV<LatestNewCVCell>?
+    var latestNewCVViewModel        : LatestNewsCVVM?
+    var latestNewCV                 : LatestNewsCV<LatestNewCVCell>?
     
+    override func customiseView() {
+        super.customiseView()
+        logOutBtn.setTitle("", for: .normal)
+        logOutBtn.setImage(UIImage(named: "back")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        searchBar.delegate          = self
+    }
     override func setupBindings() {
         super.setupBindings()
         if let viewModel = self.viewModel {
@@ -28,18 +35,20 @@ class DashboardVC: BaseVC<DashboardVM> {
                     self.navigationController?.isNavigationBarHidden = true
                 }),
                 viewModel.setLatestNews.subscribe(onNext: { [weak self] (articles) in
-                    self?.setLatestNews(latestNews: articles)
+                    self?.updateLatestNews(latestNews: articles)
                 }),
                 // MARK: - Outputs
+                logOutBtn.rx.tap.bind {
+                    viewModel.logoutUser()
+                },
                 seeAllBtn.rx.tap.subscribe({ (_) in
                     viewModel.showSearchNewsPage.onNext(true)
                 }),
-                
             ])
         }
     }
     
-    func setLatestNews(latestNews: [Article]) {
+    func updateLatestNews(latestNews: [Article]) {
         latestNewCVViewModel                    = LatestNewsCVVM(dataSource: self, latesNews: latestNews)
         if let latestNewCVViewModel = latestNewCVViewModel {
             self.latestNewCV                    = LatestNewsCV(viewModel: latestNewCVViewModel, collectionView: _latestNewCV, delegate: self)

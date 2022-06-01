@@ -121,25 +121,38 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="YPn-du-1NE"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="fBo-2q-PJZ"/>
                             </scrollView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="YQT-Su-fEq">
-                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="YQT-Su-fEq">
+                                <rect key="frame" x="51" y="44" width="363" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGD-Sz-Vnp">
+                                <rect key="frame" x="0.0" y="44" width="51" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EGD-Sz-Vnp" secondAttribute="height" multiplier="1:1" id="yR0-CR-JPB"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RXU-bg-8My"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YQT-Su-fEq" firstAttribute="top" secondItem="RXU-bg-8My" secondAttribute="top" id="B3G-Vy-CxX"/>
+                            <constraint firstItem="EGD-Sz-Vnp" firstAttribute="bottom" secondItem="YQT-Su-fEq" secondAttribute="bottom" id="BeP-An-SVy"/>
+                            <constraint firstItem="YQT-Su-fEq" firstAttribute="leading" secondItem="EGD-Sz-Vnp" secondAttribute="trailing" id="C6x-p7-wI4"/>
                             <constraint firstItem="YQT-Su-fEq" firstAttribute="trailing" secondItem="RXU-bg-8My" secondAttribute="trailing" id="NRH-Vj-9lr"/>
                             <constraint firstItem="RXU-bg-8My" firstAttribute="trailing" secondItem="K6R-di-mI3" secondAttribute="trailing" id="Qmd-rW-OMC"/>
+                            <constraint firstItem="EGD-Sz-Vnp" firstAttribute="leading" secondItem="RXU-bg-8My" secondAttribute="leading" id="RVM-Ex-wPZ"/>
+                            <constraint firstItem="EGD-Sz-Vnp" firstAttribute="top" secondItem="YQT-Su-fEq" secondAttribute="top" id="Vps-sm-9yo"/>
                             <constraint firstItem="K6R-di-mI3" firstAttribute="top" secondItem="YQT-Su-fEq" secondAttribute="bottom" id="fbI-uX-hTi"/>
                             <constraint firstItem="K6R-di-mI3" firstAttribute="bottom" secondItem="RXU-bg-8My" secondAttribute="bottom" id="ltP-Jx-Re6"/>
                             <constraint firstItem="K6R-di-mI3" firstAttribute="leading" secondItem="RXU-bg-8My" secondAttribute="leading" id="nHj-bO-I0s"/>
-                            <constraint firstItem="YQT-Su-fEq" firstAttribute="leading" secondItem="RXU-bg-8My" secondAttribute="leading" id="qda-wS-kCO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="_latestNewCV" destination="oaL-gJ-1Cj" id="bvX-Ht-kJY"/>
+                        <outlet property="logOutBtn" destination="EGD-Sz-Vnp" id="un1-wF-PKp"/>
                         <outlet property="searchBar" destination="YQT-Su-fEq" id="PRX-Rn-Je6"/>
                         <outlet property="seeAllBtn" destination="2iA-t0-m9k" id="1Su-5B-gtj"/>
                     </connections>
@@ -198,8 +211,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsSearchVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJW-Df-0cc">
-                                <rect key="frame" x="148" y="442.5" width="118" height="21"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rAu-lK-BOf">
+                                <rect key="frame" x="0.0" y="72.5" width="414" height="789.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybe-tq-3eg">
+                                <rect key="frame" x="20" y="52" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -208,14 +225,23 @@
                         <viewLayoutGuide key="safeArea" id="ZdX-nG-yY2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WJW-Df-0cc" firstAttribute="centerX" secondItem="ZdX-nG-yY2" secondAttribute="centerX" id="4Z3-j1-tX0"/>
-                            <constraint firstItem="WJW-Df-0cc" firstAttribute="centerY" secondItem="ZdX-nG-yY2" secondAttribute="centerY" id="E0V-Ze-S8g"/>
+                            <constraint firstItem="Ybe-tq-3eg" firstAttribute="leading" secondItem="ZdX-nG-yY2" secondAttribute="leading" constant="20" id="EFc-GG-mQ5"/>
+                            <constraint firstItem="rAu-lK-BOf" firstAttribute="leading" secondItem="ZdX-nG-yY2" secondAttribute="leading" id="KdJ-vX-3dp"/>
+                            <constraint firstItem="rAu-lK-BOf" firstAttribute="bottom" secondItem="ZdX-nG-yY2" secondAttribute="bottom" id="RSr-kt-rlD"/>
+                            <constraint firstItem="ZdX-nG-yY2" firstAttribute="trailing" secondItem="Ybe-tq-3eg" secondAttribute="trailing" constant="20" id="eYe-4T-CiH"/>
+                            <constraint firstItem="rAu-lK-BOf" firstAttribute="trailing" secondItem="ZdX-nG-yY2" secondAttribute="trailing" id="ie5-ED-MGa"/>
+                            <constraint firstItem="Ybe-tq-3eg" firstAttribute="top" secondItem="ZdX-nG-yY2" secondAttribute="top" constant="8" id="l77-AH-UV6"/>
+                            <constraint firstItem="rAu-lK-BOf" firstAttribute="top" secondItem="Ybe-tq-3eg" secondAttribute="bottom" id="uWJ-id-uwm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="_tableView" destination="rAu-lK-BOf" id="alp-dz-RqH"/>
+                        <outlet property="resultDescLbl" destination="Ybe-tq-3eg" id="Uuy-ag-GlU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rX-iH-B4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2093" y="72"/>
+            <point key="canvasLocation" x="2092.753623188406" y="71.651785714285708"/>
         </scene>
     </scenes>
     <resources>

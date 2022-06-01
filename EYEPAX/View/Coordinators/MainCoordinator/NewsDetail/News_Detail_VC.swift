@@ -29,8 +29,6 @@ class NewsDetailVC: BaseVC<NewsDetailVM> {
                 viewModel.setupTitleViewInViewWillAppear.subscribe(onNext: { [weak self] _ in
                     self?.navigationController?.isNavigationBarHidden               = false
                     self?.title                                                     = viewModel.article.title
-                    self?.navigationController?.navigationBar.tintColor             = .black
-                    self?.navigationController?.navigationBar.titleTextAttributes   = [NSAttributedString.Key.foregroundColor: UIColor.black]
                 }),
                 // MARK: - Outputs
             ])

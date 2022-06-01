@@ -86,6 +86,9 @@ class MainCoordinator: BaseCoordinator<Void> {
             viewModel.showSignInVC.subscribe(onNext: { [weak self] (_) in
                 let _ = self?.start()
             }),
+            viewModel.doWithSelectedItem.subscribe(onNext: { [weak self] (article) in
+                self?.goToNewsDetailsVC(article: article)
+            }),
         ])
 
         let destinationVC               = NewsSearchVC.initFromStoryboard(name: Storyboards.main.rawValue, withViewModel: viewModel)

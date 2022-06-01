@@ -9,7 +9,22 @@
 import Foundation
 import UIKit
 
-class NewsSearchVC: BaseVC<NewsSearchVM> {
+class NewsSearchVC: BaseListWithoutHeadersVC<Article, NewsSearchVM, NewsTVCell> {
+    
+    @IBOutlet weak var resultDescLbl            : UILabel!
+    @IBOutlet weak var _tableView               : UITableView!
+    
+    override var cellLoadFromNib                : Bool { get { return true } set {} }
+    override var shouldSetRowHeight             : Bool { get { return false } set {} }
+    
+    override func customiseView() {
+        super.customiseView(tableView: _tableView, multiSelectable: false)
+        self.searchBar.searchBarStyle           = .minimal
+        resultDescLbl.text          = ""
+        self.navigationController?.isNavigationBarHidden                        = false
+        self.showSearchBar(searchBar: self.searchBar)
+        self.addBackButton(title: nil)
+    }
     
     override func setupBindings() {
         super.setupBindings()
@@ -17,8 +32,8 @@ class NewsSearchVC: BaseVC<NewsSearchVM> {
 
             disposeBag.insert([
                 // MARK: - Inputs
-                viewModel.setupTitleViewInViewWillAppear.subscribe(onNext: { _ in
-                    self.navigationController?.isNavigationBarHidden = true
+                viewModel.updateResultDesc.subscribe(onNext: { [weak self] (resultDesc) in
+                    self?.resultDescLbl.text    = resultDesc
                 }),
                 // MARK: - Outputs
             ])
