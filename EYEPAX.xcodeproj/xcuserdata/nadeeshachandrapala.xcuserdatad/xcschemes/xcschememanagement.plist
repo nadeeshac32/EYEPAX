@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>EYEPAX.xcscheme_^#shared#^_</key>
+		<key>Dev.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>24</integer>
+			<integer>25</integer>
+		</dict>
+		<key>Prod.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>26</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C980715E284647B300C90033</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9807174284647B400C90033</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C980717E284647B400C90033</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
