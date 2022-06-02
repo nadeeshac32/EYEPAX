@@ -19,9 +19,9 @@ class NewsSearchVC: BaseListWithoutHeadersVC<Article, NewsSearchVM, NewsTVCell> 
     
     override func customiseView() {
         super.customiseView(tableView: _tableView, multiSelectable: false)
-        self.searchBar.searchBarStyle           = .minimal
-        resultDescLbl.text          = ""
-        self.navigationController?.isNavigationBarHidden                        = false
+        self.searchBar.searchBarStyle                       = .minimal
+        resultDescLbl.text                                  = ""
+        self.navigationController?.isNavigationBarHidden    = false
         self.showSearchBar(searchBar: self.searchBar)
         self.addBackButton(title: nil)
     }

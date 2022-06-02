@@ -128,6 +128,8 @@ class BaseList<Model:BaseModel, ViewModel: BaseTableViewVM<Model>, TableViewCell
         }
     }
     
+    
+    
     @objc func longPress(_ longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if longPressGestureRecognizer.state == UIGestureRecognizer.State.ended {
             viewModel?.multiSelectable = true

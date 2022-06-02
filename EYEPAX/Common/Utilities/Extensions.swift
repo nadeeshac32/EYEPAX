@@ -445,7 +445,7 @@ extension UITableView {
     func removeNoDataPlaceholder() {
         self.isScrollEnabled = true
         self.backgroundView = nil
-        self.separatorStyle = .singleLine
+        self.separatorStyle = .none
     }
 }
 
