@@ -10,10 +10,11 @@ This project has used some base classes which were developed by me. Which can be
 - [x] Base Table View Controller and Base Collection View Controller supports,
   - API Pagination,
   - Search,
-  - Static data loading,
   - Multiple list views & grid views in one screen,
+  - Can hanlde the UI when the table view is empty,
+  - Static data loading,
   - Section headers (Dynemic and custom).
-  - Can eliminate all the boilerplate code and you only have to customise your UITableViewCell/UICollectionViewCell which extends from BaseTVCell/BaseCVCell.
+  - Can eliminate all the boilerplate code and you only have to customise your rendering UITableViewCell/UICollectionViewCell (which extends from BaseTVCell/BaseCVCell) with the data Model (which extends from BaseModel).
 
 ## Reusable components
 - [x] Facebook SignIn - Social sign in capability with these protocols and there default implementations. Adopts to Base MVVM architecture.
@@ -57,7 +58,7 @@ Name                          | purpose
 [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper) | Mapping JSON objects into Swift classes
 [KeychainSwift](https://github.com/evgenyneu/keychain-swift) | Wraper to store data securely in Keychain.
 [RxCocoa](https://github.com/ReactiveX/RxSwift) | This is a Swift version of Rx.
-[FBSDKLoginKit](https://developers.facebook.com/docs/facebook-login/ios/) | Google Sign in functionality
+[FBSDKLoginKit](https://developers.facebook.com/docs/facebook-login/ios/) | Facebook Sign in functionality
 
 ## License
 
