@@ -24,6 +24,7 @@ class NewsSearchVC: BaseListWithoutHeadersVC<Article, NewsSearchVM, NewsTVCell> 
         self.navigationController?.isNavigationBarHidden    = false
         self.showSearchBar(searchBar: self.searchBar)
         self.addBackButton(title: nil)
+        self.tableView.keyboardDismissMode                  = .onDrag
     }
     
     override func setupBindings() {
